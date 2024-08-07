@@ -4,6 +4,7 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
+import { ListaContactos } from "./views/listaContactos.jsx";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
@@ -28,7 +29,8 @@ const Layout = () => {
 						<Route path="/demo" element={<Demo />} />
 						<Route path="/single/:theid" element={<Single />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
-						<Route path="anadirContacto" element={<AnadirContacto/>} />
+						<Route path="/anadir-contacto" element={<AnadirContacto/>} />
+						<Route path="/lista-contactos" element={<ListaContactos/>} />
 					</Routes>
 					<Footer />
 				</ScrollToTop>

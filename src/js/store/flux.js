@@ -1,3 +1,5 @@
+
+
 const getState = ({ getStore, getActions, setStore }) => {
     return {
         store: {
@@ -12,7 +14,8 @@ const getState = ({ getStore, getActions, setStore }) => {
                     background: "white",
                     initial: "white"
                 }
-            ]
+            ],
+            listaContactos: []
         },
         actions: {
             createAgenda: () => {
@@ -35,6 +38,17 @@ const getState = ({ getStore, getActions, setStore }) => {
                 .catch(error => {
                     console.error('Error:', error);
                 });
+            },
+            getListaContactos: async () => {
+                const response = await fetch("https://playground.4geeks.com/contact/agendas/Dario/contacts", {
+                    method: "GET",
+                    headers: {
+                        "Content-Type":"application/json"
+                    }
+                });
+                const {contacts} = await response.json();
+                const store = getStore();
+                setStore({...store, listaContactos: contacts});
             }
         }
     };
