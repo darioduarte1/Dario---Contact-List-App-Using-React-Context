@@ -8,7 +8,7 @@ export const Navbar = () => {
 				<span className="navbar-brand mb-0 h1">React Boilerplate</span>
 			</Link>
 			<div className="ml-auto">
-				<Link to="/anadirContacto">
+				<Link to="/anadir-contacto">
 					<button className="btn btn-primary">Anadir Contacto</button>
 				</Link>
 			</div>
