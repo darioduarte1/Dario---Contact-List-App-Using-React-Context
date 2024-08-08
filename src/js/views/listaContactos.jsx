@@ -1,5 +1,6 @@
 import React, {useContext, useEffect} from "react"
 import { Context } from "../store/appContext";
+import { Contacto } from "../component/contacto.jsx";
 
 export const ListaContactos = () =>{
     const { store, actions } = useContext(Context);
@@ -7,12 +8,10 @@ export const ListaContactos = () =>{
     return <>
         {console.log (store.listaContactos)}
 
-<ul>
+
     {store.listaContactos.map((contacto) => {
-        return <li>
-            {contacto.name}
-        </li>
+        return <Contacto {...contacto}/>
     })}
-</ul>
+
     </>
 }
