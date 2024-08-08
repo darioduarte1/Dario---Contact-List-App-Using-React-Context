@@ -4,7 +4,7 @@ import { Contacto } from "../component/contacto.jsx";
 
 export const ListaContactos = () =>{
     const { store, actions } = useContext(Context);
-    useEffect(() => {actions.getListaContactos()},[])
+    *useEffect(() => {actions.getListaContactos()},[])
     return <>
         {console.log (store.listaContactos)}
 
