@@ -49,7 +49,27 @@ const getState = ({ getStore, getActions, setStore }) => {
                 const {contacts} = await response.json();
                 const store = getStore();
                 setStore({...store, listaContactos: contacts});
-            }
+            },
+
+            createContact : (name, email, phone, adress) => {
+                fetch("https://playground.4geeks.com/contact/agendas/Dario/contacts", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type":"application/json"
+                    },
+                    body: JSON.stringify(
+                        {
+                            name: name,
+                            phone: phone,
+                            email: email,
+                            address: adress
+                          }
+                    )
+            })
+            .then(resp => resp.json())
+            .then(data => data)
+            .catch(error => console.log (error))
+        }
         }
     };
 };

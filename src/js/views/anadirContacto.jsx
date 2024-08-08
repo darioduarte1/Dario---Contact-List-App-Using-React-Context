@@ -1,30 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { Context } from "../store/appContext";
+import { useNavigate } from "react-router";
 
 const AnadirContacto = () => {
+    const { store, actions } = useContext(Context);
+    const navigate = useNavigate();
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState("")
     const [adress, setAdress] = useState("")
 
-    const createContact = (name, email, phone, adress) => {
-        fetch("https://playground.4geeks.com/contact/agendas/Dario/contacts", {
-            method: "POST",
-            headers: {
-                "Content-Type":"application/json"
-            },
-            body: JSON.stringify(
-                {
-                    name: name,
-                    phone: phone,
-                    email: email,
-                    address: adress
-                  }
-            )
-    })
-    .then(resp => resp.json())
-    .then(data => data)
-    .catch(error => console.log (error))
-}
+    const createContact = (name, phone, email, adress) => {
+        actions.createContact(name, phone, email, adress);
+        navigate("/")
+    }
 
     return (
             <div className="d-flex flex-column" >

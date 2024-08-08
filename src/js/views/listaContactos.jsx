@@ -6,5 +6,13 @@ export const ListaContactos = () =>{
     useEffect(() => {actions.getListaContactos()},[])
     return <>
         {console.log (store.listaContactos)}
+
+<ul>
+    {store.listaContactos.map((contacto) => {
+        return <li>
+            {contacto.name}
+        </li>
+    })}
+</ul>
     </>
 }
