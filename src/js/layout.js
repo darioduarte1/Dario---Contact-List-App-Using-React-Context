@@ -12,6 +12,7 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
 import AnadirContacto from "./views/anadirContacto.jsx";
+import EditarContacto from "./views/editarContacto.jsx";
 
 //create your first component
 const Layout = () => {
@@ -30,6 +31,7 @@ const Layout = () => {
 						<Route path="/single/:theid" element={<Single />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
 						<Route path="/anadir-contacto" element={<AnadirContacto/>} />
+						ç<Route path="/editar-contacto" element={<EditarContacto/>} />
 					</Routes>
 					<Footer />
 				</ScrollToTop>
